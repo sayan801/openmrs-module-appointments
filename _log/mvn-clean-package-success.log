@@ -1,0 +1,299 @@
+ubuntu@ip-10-0-22-13:~/code/openmrs-module-appointments$ mvn clean package
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 4 modules
+[INFO] Installing Central Publishing features
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Bahmni Appointment Scheduling                                      [pom]
+[INFO] appointments API                                                   [jar]
+[INFO] appointments AtomFeed                                              [jar]
+[INFO] appointments OMOD                                                  [jar]
+[INFO] 
+[INFO] -------------------< org.bahmni.module:appointments >-------------------
+[INFO] Building Bahmni Appointment Scheduling 2.1.0-SNAPSHOT              [1/4]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ appointments ---
+[INFO] Deleting /home/ubuntu/code/openmrs-module-appointments/target
+[INFO] 
+[INFO] -----------------< org.bahmni.module:appointments-api >-----------------
+[INFO] Building appointments API 2.1.0-SNAPSHOT                           [2/4]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ appointments-api ---
+[INFO] Deleting /home/ubuntu/code/openmrs-module-appointments/api/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default) @ appointments-api ---
+[INFO] argLine set to -javaagent:/home/ubuntu/.m2/repository/org/jacoco/org.jacoco.agent/0.7.9/org.jacoco.agent-0.7.9-runtime.jar=destfile=/home/ubuntu/code/openmrs-module-appointments/api/target/jacoco.exec,includes=**/*:**/*,excludes=**/*Activator.class -Xmx1024m
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ appointments-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 18 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ appointments-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 72 source files to /home/ubuntu/code/openmrs-module-appointments/api/target/classes
+[WARNING] /home/ubuntu/code/openmrs-module-appointments/api/src/main/java/org/openmrs/module/appointments/dao/impl/AppointmentRecurringPatternDaoImpl.java: Some input files use or override a deprecated API.
+[WARNING] /home/ubuntu/code/openmrs-module-appointments/api/src/main/java/org/openmrs/module/appointments/dao/impl/AppointmentRecurringPatternDaoImpl.java: Recompile with -Xlint:deprecation for details.
+[WARNING] /home/ubuntu/code/openmrs-module-appointments/api/src/main/java/org/openmrs/module/appointments/model/Appointment.java: Some input files use unchecked or unsafe operations.
+[WARNING] /home/ubuntu/code/openmrs-module-appointments/api/src/main/java/org/openmrs/module/appointments/model/Appointment.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ appointments-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 7 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ appointments-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 32 source files to /home/ubuntu/code/openmrs-module-appointments/api/target/test-classes
+[WARNING] /home/ubuntu/code/openmrs-module-appointments/api/src/test/java/org/openmrs/module/appointments/BaseIntegrationTest.java: Some input files use or override a deprecated API.
+[WARNING] /home/ubuntu/code/openmrs-module-appointments/api/src/test/java/org/openmrs/module/appointments/BaseIntegrationTest.java: Recompile with -Xlint:deprecation for details.
+[WARNING] /home/ubuntu/code/openmrs-module-appointments/api/src/test/java/org/openmrs/module/appointments/service/impl/AppointmentsServiceImplTest.java: Some input files use unchecked or unsafe operations.
+[WARNING] /home/ubuntu/code/openmrs-module-appointments/api/src/test/java/org/openmrs/module/appointments/service/impl/AppointmentsServiceImplTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.10:test (default-test) @ appointments-api ---
+[INFO] Surefire report directory: /home/ubuntu/code/openmrs-module-appointments/api/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Exception in thread "main" java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:513)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:525)
+Caused by: java.lang.RuntimeException: Class java/util/UUID could not be instrumented.
+	at org.jacoco.agent.rt.internal_8ff85ea.core.runtime.ModifiedSystemClassRuntime.createFor(ModifiedSystemClassRuntime.java:140)
+	at org.jacoco.agent.rt.internal_8ff85ea.core.runtime.ModifiedSystemClassRuntime.createFor(ModifiedSystemClassRuntime.java:101)
+	at org.jacoco.agent.rt.internal_8ff85ea.PreMain.createRuntime(PreMain.java:55)
+	at org.jacoco.agent.rt.internal_8ff85ea.PreMain.premain(PreMain.java:47)
+	... 6 more
+Caused by: java.lang.NoSuchFieldException: $jacocoAccess
+	at java.base/java.lang.Class.getField(Class.java:1999)
+	at org.jacoco.agent.rt.internal_8ff85ea.core.runtime.ModifiedSystemClassRuntime.createFor(ModifiedSystemClassRuntime.java:138)
+	... 9 more
+*** java.lang.instrument ASSERTION FAILED ***: "result" with message agent load/premain call failed at ./src/java.instrument/share/native/libinstrument/JPLISAgent.c line: 422
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x8ece74]  jni_FatalError+0xf4
+V  [libjvm.so+0xa1472a]  JvmtiExport::post_vm_initialized()+0x2da
+V  [libjvm.so+0xe4ed51]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x9d1
+V  [libjvm.so+0x8fbcb6]  JNI_CreateJavaVM+0x56
+C  [libjli.so+0x4d11]  JavaMain+0x91
+C  [libjli.so+0x99bd]  ThreadJavaMain+0xd
+Aborted (core dumped)
+
+Results :
+
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ appointments-api ---
+[INFO] Building jar: /home/ubuntu/code/openmrs-module-appointments/api/target/appointments-api-2.1.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ appointments-api ---
+[INFO] Building jar: /home/ubuntu/code/openmrs-module-appointments/api/target/appointments-api-2.1.0-SNAPSHOT-tests.jar
+[INFO] 
+[INFO] --------------< org.bahmni.module:appointments-atom-feed >--------------
+[INFO] Building appointments AtomFeed 2.1.0-SNAPSHOT                      [3/4]
+[INFO] --------------------------------[ jar ]---------------------------------
+Downloading from openmrs-repo: https://mavenrepo.openmrs.org/nexus/content/repositories/public/org/ict4h/openmrs/openmrs-atomfeed-common/2.6.2/openmrs-atomfeed-common-2.6.2.pom
+Downloaded from openmrs-repo: https://mavenrepo.openmrs.org/nexus/content/repositories/public/org/ict4h/openmrs/openmrs-atomfeed-common/2.6.2/openmrs-atomfeed-common-2.6.2.pom (1.5 kB at 2.4 kB/s)
+Downloading from openmrs-repo: https://mavenrepo.openmrs.org/nexus/content/repositories/public/org/ict4h/openmrs/openmrs-atomfeed/2.6.2/openmrs-atomfeed-2.6.2.pom
+Downloaded from openmrs-repo: https://mavenrepo.openmrs.org/nexus/content/repositories/public/org/ict4h/openmrs/openmrs-atomfeed/2.6.2/openmrs-atomfeed-2.6.2.pom (6.8 kB at 32 kB/s)
+Downloading from openmrs-repo: https://mavenrepo.openmrs.org/nexus/content/repositories/public/org/ict4h/atomfeed-server/1.10.1/atomfeed-server-1.10.1.pom
+Downloaded from openmrs-repo: https://mavenrepo.openmrs.org/nexus/content/repositories/public/org/ict4h/atomfeed-server/1.10.1/atomfeed-server-1.10.1.pom (9.7 kB at 46 kB/s)
+Downloading from openmrs-repo: https://mavenrepo.openmrs.org/nexus/content/repositories/public/org/ict4h/atomfeed/1.10.1/atomfeed-1.10.1.pom
+Downloaded from openmrs-repo: https://mavenrepo.openmrs.org/nexus/content/repositories/public/org/ict4h/atomfeed/1.10.1/atomfeed-1.10.1.pom (8.9 kB at 42 kB/s)
+Downloading from openmrs-repo: https://mavenrepo.openmrs.org/nexus/content/repositories/public/org/ict4h/atomfeed-commons/1.10.1/atomfeed-commons-1.10.1.pom
+Downloaded from openmrs-repo: https://mavenrepo.openmrs.org/nexus/content/repositories/public/org/ict4h/atomfeed-commons/1.10.1/atomfeed-commons-1.10.1.pom (3.1 kB at 15 kB/s)
+Downloading from openmrs-repo: https://mavenrepo.openmrs.org/nexus/content/repositories/public/javax/persistence/persistence-api/1.0.2/persistence-api-1.0.2.pom
+Downloaded from openmrs-repo: https://mavenrepo.openmrs.org/nexus/content/repositories/public/javax/persistence/persistence-api/1.0.2/persistence-api-1.0.2.pom (167 B at 791 B/s)
+Downloading from openmrs-repo: https://mavenrepo.openmrs.org/nexus/content/repositories/public/rome/rome/1.0/rome-1.0.pom
+Downloaded from openmrs-repo: https://mavenrepo.openmrs.org/nexus/content/repositories/public/rome/rome/1.0/rome-1.0.pom (6.4 kB at 31 kB/s)
+Downloading from openmrs-repo: https://mavenrepo.openmrs.org/nexus/content/repositories/public/jdom/jdom/1.0/jdom-1.0.pom
+Downloaded from openmrs-repo: https://mavenrepo.openmrs.org/nexus/content/repositories/public/jdom/jdom/1.0/jdom-1.0.pom (1.2 kB at 5.5 kB/s)
+Downloading from openmrs-repo: https://mavenrepo.openmrs.org/nexus/content/repositories/public/org/ict4h/openmrs/openmrs-atomfeed-common/2.6.2/openmrs-atomfeed-common-2.6.2.jar
+Downloading from openmrs-repo: https://mavenrepo.openmrs.org/nexus/content/repositories/public/org/ict4h/atomfeed-server/1.10.1/atomfeed-server-1.10.1.jar
+Downloading from openmrs-repo: https://mavenrepo.openmrs.org/nexus/content/repositories/public/org/ict4h/atomfeed-commons/1.10.1/atomfeed-commons-1.10.1.jar
+Downloading from openmrs-repo: https://mavenrepo.openmrs.org/nexus/content/repositories/public/javax/persistence/persistence-api/1.0.2/persistence-api-1.0.2.jar
+Downloading from openmrs-repo: https://mavenrepo.openmrs.org/nexus/content/repositories/public/rome/rome/1.0/rome-1.0.jar
+Downloaded from openmrs-repo: https://mavenrepo.openmrs.org/nexus/content/repositories/public/org/ict4h/openmrs/openmrs-atomfeed-common/2.6.2/openmrs-atomfeed-common-2.6.2.jar (5.4 kB at 24 kB/s)
+Downloading from openmrs-repo: https://mavenrepo.openmrs.org/nexus/content/repositories/public/jdom/jdom/1.0/jdom-1.0.jar
+Downloaded from openmrs-repo: https://mavenrepo.openmrs.org/nexus/content/repositories/public/org/ict4h/atomfeed-commons/1.10.1/atomfeed-commons-1.10.1.jar (10 kB at 18 kB/s)
+Downloaded from openmrs-repo: https://mavenrepo.openmrs.org/nexus/content/repositories/public/jdom/jdom/1.0/jdom-1.0.jar (153 kB at 256 kB/s)
+Downloaded from openmrs-repo: https://mavenrepo.openmrs.org/nexus/content/repositories/public/javax/persistence/persistence-api/1.0.2/persistence-api-1.0.2.jar (54 kB at 87 kB/s)
+Downloaded from openmrs-repo: https://mavenrepo.openmrs.org/nexus/content/repositories/public/org/ict4h/atomfeed-server/1.10.1/atomfeed-server-1.10.1.jar (64 kB at 101 kB/s)
+Downloaded from openmrs-repo: https://mavenrepo.openmrs.org/nexus/content/repositories/public/rome/rome/1.0/rome-1.0.jar (220 kB at 177 kB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ appointments-atom-feed ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default) @ appointments-atom-feed ---
+[INFO] argLine set to -javaagent:/home/ubuntu/.m2/repository/org/jacoco/org.jacoco.agent/0.7.9/org.jacoco.agent-0.7.9-runtime.jar=destfile=/home/ubuntu/code/openmrs-module-appointments/atom-feed/target/jacoco.exec,includes=**/*:**/*,excludes=**/*Activator.class -Xmx1024m
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ appointments-atom-feed ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ubuntu/code/openmrs-module-appointments/atom-feed/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ appointments-atom-feed ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to /home/ubuntu/code/openmrs-module-appointments/atom-feed/target/classes
+[WARNING] /home/ubuntu/code/openmrs-module-appointments/atom-feed/src/main/java/org/openmrs/module/appointments/advice/RecurringAppointmentsAdvice.java: /home/ubuntu/code/openmrs-module-appointments/atom-feed/src/main/java/org/openmrs/module/appointments/advice/RecurringAppointmentsAdvice.java uses unchecked or unsafe operations.
+[WARNING] /home/ubuntu/code/openmrs-module-appointments/atom-feed/src/main/java/org/openmrs/module/appointments/advice/RecurringAppointmentsAdvice.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ appointments-atom-feed ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ubuntu/code/openmrs-module-appointments/atom-feed/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ appointments-atom-feed ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /home/ubuntu/code/openmrs-module-appointments/atom-feed/target/test-classes
+[WARNING] /home/ubuntu/code/openmrs-module-appointments/atom-feed/src/test/java/org/openmrs/module/appointments/advice/AppointmentAdviceTest.java: Some input files use or override a deprecated API.
+[WARNING] /home/ubuntu/code/openmrs-module-appointments/atom-feed/src/test/java/org/openmrs/module/appointments/advice/AppointmentAdviceTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.10:test (default-test) @ appointments-atom-feed ---
+[INFO] Surefire report directory: /home/ubuntu/code/openmrs-module-appointments/atom-feed/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Exception in thread "main" java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:513)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:525)
+Caused by: java.lang.RuntimeException: Class java/util/UUID could not be instrumented.
+	at org.jacoco.agent.rt.internal_8ff85ea.core.runtime.ModifiedSystemClassRuntime.createFor(ModifiedSystemClassRuntime.java:140)
+	at org.jacoco.agent.rt.internal_8ff85ea.core.runtime.ModifiedSystemClassRuntime.createFor(ModifiedSystemClassRuntime.java:101)
+	at org.jacoco.agent.rt.internal_8ff85ea.PreMain.createRuntime(PreMain.java:55)
+	at org.jacoco.agent.rt.internal_8ff85ea.PreMain.premain(PreMain.java:47)
+	... 6 more
+Caused by: java.lang.NoSuchFieldException: $jacocoAccess
+	at java.base/java.lang.Class.getField(Class.java:1999)
+	at org.jacoco.agent.rt.internal_8ff85ea.core.runtime.ModifiedSystemClassRuntime.createFor(ModifiedSystemClassRuntime.java:138)
+	... 9 more
+*** java.lang.instrument ASSERTION FAILED ***: "result" with message agent load/premain call failed at ./src/java.instrument/share/native/libinstrument/JPLISAgent.c line: 422
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x8ece74]  jni_FatalError+0xf4
+V  [libjvm.so+0xa1472a]  JvmtiExport::post_vm_initialized()+0x2da
+V  [libjvm.so+0xe4ed51]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x9d1
+V  [libjvm.so+0x8fbcb6]  JNI_CreateJavaVM+0x56
+C  [libjli.so+0x4d11]  JavaMain+0x91
+C  [libjli.so+0x99bd]  ThreadJavaMain+0xd
+Aborted (core dumped)
+
+Results :
+
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ appointments-atom-feed ---
+[INFO] Building jar: /home/ubuntu/code/openmrs-module-appointments/atom-feed/target/appointments-atom-feed-2.1.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ appointments-atom-feed ---
+[INFO] Building jar: /home/ubuntu/code/openmrs-module-appointments/atom-feed/target/appointments-atom-feed-2.1.0-SNAPSHOT-tests.jar
+[INFO] 
+[INFO] ----------------< org.bahmni.module:appointments-omod >-----------------
+[INFO] Building appointments OMOD 2.1.0-SNAPSHOT                          [4/4]
+[INFO] --------------------------------[ jar ]---------------------------------
+Downloading from openmrs-repo: https://mavenrepo.openmrs.org/nexus/content/repositories/public/com/google/code/gson/gson/2.3.1/gson-2.3.1.pom
+Downloaded from openmrs-repo: https://mavenrepo.openmrs.org/nexus/content/repositories/public/com/google/code/gson/gson/2.3.1/gson-2.3.1.pom (9.0 kB at 43 kB/s)
+Downloading from openmrs-repo: https://mavenrepo.openmrs.org/nexus/content/repositories/public/com/google/code/gson/gson/2.3.1/gson-2.3.1.jar
+Downloaded from openmrs-repo: https://mavenrepo.openmrs.org/nexus/content/repositories/public/com/google/code/gson/gson/2.3.1/gson-2.3.1.jar (211 kB at 399 kB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ appointments-omod ---
+[INFO] 
+[INFO] --- maven-openmrs-plugin:1.0.1:initialize-module (init) @ appointments-omod ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default) @ appointments-omod ---
+[INFO] argLine set to -javaagent:/home/ubuntu/.m2/repository/org/jacoco/org.jacoco.agent/0.7.9/org.jacoco.agent-0.7.9-runtime.jar=destfile=/home/ubuntu/code/openmrs-module-appointments/omod/target/jacoco.exec,includes=org/openmrs/module/appointments/web/** -Xmx1024m
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.4:unpack-dependencies (Expand moduleApplicationContext and messages) @ appointments-omod ---
+[INFO] Unpacking /home/ubuntu/code/openmrs-module-appointments/api/target/appointments-api-2.1.0-SNAPSHOT.jar to /home/ubuntu/code/openmrs-module-appointments/omod/target/classes with includes "**\/*.xml,**\/*.properties" and excludes ""
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ appointments-omod ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ appointments-omod ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 36 source files to /home/ubuntu/code/openmrs-module-appointments/omod/target/classes
+[WARNING] /home/ubuntu/code/openmrs-module-appointments/omod/src/main/java/org/openmrs/module/appointments/web/mapper/AppointmentMapper.java: Some input files use unchecked or unsafe operations.
+[WARNING] /home/ubuntu/code/openmrs-module-appointments/omod/src/main/java/org/openmrs/module/appointments/web/mapper/AppointmentMapper.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ appointments-omod ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 6 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ appointments-omod ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 32 source files to /home/ubuntu/code/openmrs-module-appointments/omod/target/test-classes
+[WARNING] /home/ubuntu/code/openmrs-module-appointments/omod/src/test/java/org/openmrs/module/appointments/web/BaseWebControllerTest.java: Some input files use or override a deprecated API.
+[WARNING] /home/ubuntu/code/openmrs-module-appointments/omod/src/test/java/org/openmrs/module/appointments/web/BaseWebControllerTest.java: Recompile with -Xlint:deprecation for details.
+[WARNING] /home/ubuntu/code/openmrs-module-appointments/omod/src/test/java/org/openmrs/module/appointments/web/mapper/AppointmentMapperTest.java: Some input files use unchecked or unsafe operations.
+[WARNING] /home/ubuntu/code/openmrs-module-appointments/omod/src/test/java/org/openmrs/module/appointments/web/mapper/AppointmentMapperTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.10:test (default-test) @ appointments-omod ---
+[INFO] Surefire report directory: /home/ubuntu/code/openmrs-module-appointments/omod/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Exception in thread "main" java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:513)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:525)
+Caused by: java.lang.RuntimeException: Class java/util/UUID could not be instrumented.
+	at org.jacoco.agent.rt.internal_8ff85ea.core.runtime.ModifiedSystemClassRuntime.createFor(ModifiedSystemClassRuntime.java:140)
+	at org.jacoco.agent.rt.internal_8ff85ea.core.runtime.ModifiedSystemClassRuntime.createFor(ModifiedSystemClassRuntime.java:101)
+	at org.jacoco.agent.rt.internal_8ff85ea.PreMain.createRuntime(PreMain.java:55)
+	at org.jacoco.agent.rt.internal_8ff85ea.PreMain.premain(PreMain.java:47)
+	... 6 more
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+Caused by: java.lang.NoSuchFieldException: $jacocoAccess
+	at java.base/java.lang.Class.getField(Class.java:1999)
+	at org.jacoco.agent.rt.internal_8ff85ea.core.runtime.ModifiedSystemClassRuntime.createFor(ModifiedSystemClassRuntime.java:138)
+	... 9 more
+*** java.lang.instrument ASSERTION FAILED ***: "result" with message agent load/premain call failed at ./src/java.instrument/share/native/libinstrument/JPLISAgent.c line: 422
+V  [libjvm.so+0x8ece74]  jni_FatalError+0xf4
+V  [libjvm.so+0xa1472a]  JvmtiExport::post_vm_initialized()+0x2da
+V  [libjvm.so+0xe4ed51]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x9d1
+V  [libjvm.so+0x8fbcb6]  JNI_CreateJavaVM+0x56
+C  [libjli.so+0x4d11]  JavaMain+0x91
+C  [libjli.so+0x99bd]  ThreadJavaMain+0xd
+Aborted (core dumped)
+
+Results :
+
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ appointments-omod ---
+[INFO] Building jar: /home/ubuntu/code/openmrs-module-appointments/omod/target/appointments-2.1.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-openmrs-plugin:1.0.1:package-module (pack) @ appointments-omod ---
+[INFO] Packaging OpenMRS module
+[INFO] Building jar: /home/ubuntu/code/openmrs-module-appointments/omod/target/appointments-2.1.0-SNAPSHOT.omod
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ appointments-omod ---
+[INFO] Building jar: /home/ubuntu/code/openmrs-module-appointments/omod/target/appointments-2.1.0-SNAPSHOT-tests.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Bahmni Appointment Scheduling 2.1.0-SNAPSHOT:
+[INFO] 
+[INFO] Bahmni Appointment Scheduling ...................... SUCCESS [  0.071 s]
+[INFO] appointments API ................................... SUCCESS [  4.213 s]
+[INFO] appointments AtomFeed .............................. SUCCESS [  5.265 s]
+[INFO] appointments OMOD .................................. SUCCESS [  3.587 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  13.518 s
